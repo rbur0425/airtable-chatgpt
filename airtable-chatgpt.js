@@ -2,6 +2,7 @@
 const apiKey = 'sk-XXXX'; //Change API-Key
 const url = 'https://api.openai.com/v1/chat/completions';
 const model = 'gpt-3.5-turbo';
+const table_name = '';
 
 // Function to generate GPT response
 async function generateGPTResponse(prompt) {
@@ -29,8 +30,8 @@ async function generateGPTResponse(prompt) {
     return await response.json();
 }
 
-// Get the prompts table
-let table = base.getTable("Prompts");
+// Get the table
+let table = base.getTable(table_name);
 
 // Prompt the user to pick a record
 let selectedRecord = await input.recordAsync('Select a record to start processing from', table);
